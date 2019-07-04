@@ -603,7 +603,7 @@
 }
 
 .text__word {
-  /* ! */ vertical-align: text-bottom;
+  /* vertical-align: text-bottom; */
   height: 1em;
   background-color: var(--text-color);
   display: inline-block;
@@ -864,7 +864,7 @@
 }
 .commercial__image {
   height: 180px;
-  border:  var(--border-width) solid var(--bg-color-border);
+  border: var(--border-width) solid var(--bg-color-border);
 }
 .commercial__info {
   flex-direction: column;
@@ -891,7 +891,7 @@
 
 .cover__preview {
   height: 180px;
-  margin-bottom: var(--space-m)
+  margin-bottom: var(--space-m);
 }
 /* collect */
 .collect {
@@ -920,13 +920,13 @@
 }
 
 .collect__done_size_one-third {
-  width: 33.333%
+  width: 33.333%;
 }
 .collect__done_size_half {
-  width: 50%
+  width: 50%;
 }
 .collect__done_size_two-third {
-  width: 66.666%
+  width: 66.666%;
 }
 
 .collect__footer {
@@ -959,7 +959,8 @@
   flex-direction: column;
 }
 
-.offer__name, .offer__sale {
+.offer__name,
+.offer__sale {
   margin-bottom: var(--space-xs);
 }
 /* subscription */
