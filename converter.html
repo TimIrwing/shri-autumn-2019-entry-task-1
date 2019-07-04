@@ -1,0 +1,47 @@
+<!-- Страница использовалась до момента, когда в голову пришла идея test.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BEMJSON to HTML converter</title>
+  <link rel="stylesheet" href="./converter.css">
+</head>
+<body>
+  <fieldset>
+    <legend>Input</legend>
+    <textarea id="input" spellcheck="false" placeholder="Input your BEMJSON structure"></textarea>
+  </fieldset>
+  <fieldset>
+    <legend>Output</legend>
+    <textarea id="output" readonly spellcheck="false" placeholder="Resulting HTML will appear here"></textarea>
+  </fieldset>
+
+  <script type="module">
+    import processor from './build/template-engine.js';
+
+    const input = document.getElementById(`input`);
+    const output = document.getElementById(`output`);
+
+    input.oninput = function(e) {
+      let val = ``;
+
+      try {
+        const match = input.value.match(/^\s*$/);
+
+        if (match === null) {
+          val = processor(parse(input.value));
+        }
+      } catch (e) {
+        val = e;
+      }
+      output.value = val;
+    }
+
+    function parse(str) {
+      return (new Function(`const document = ''; return ${str}`))();
+    }
+  </script>
+</body>
+</html>

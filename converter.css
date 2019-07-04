@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+fieldset {
+  margin: 0;
+}
+
+legend {
+  border: 1px solid gray;
+  font-size: 1.5em;
+  padding: 0.2em 0.333em;
+  font-family: sans-serif;
+  letter-spacing: 0.05em;
+}
+
+textarea {
+  width: 95vw;
+  height: 40vh;
+  resize: none;
+  font-size: 1.1em;
+  font-family: Courier, monospace;
+}
